@@ -1,3 +1,7 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .banner{
     background-color: black;
     display: flex;
@@ -68,7 +72,6 @@
 .navpic .donatebutton {
     display: flex;
     margin-right: 180px;
-
 }
 .navpic button{
     border: solid 2px orange;
@@ -77,7 +80,110 @@
     background-color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.navpic button:hover{
+    background-color: lightskyblue;
+    color: white;
+}
+
+.catbanner{
+    display: flex;
+    position: relative;
+}
 .catbanner img{
-    width: max-content;
-    height: 900px;
+    width: 100%;
+    /* background-attachment: fixed; */
+}
+.catbanner .catbannertext{
+    display: flex;
+    flex-direction: column;
+    /* z-index: 1; */
+    position: absolute;
+    margin: 200px 170px;
+    text-align: left;
+}
+.catbanner h2{
+    font-size: 70px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: gray;
+}
+.catbanner h1{
+    font-size: 80px;
+    color:lightskyblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.catbanner h4{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.catbanner .catbutton{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 420px;
+    margin-left: 170px;
+    width: 200px;
+}
+.catbanner button{
+    height: 75px;
+    background-color: orange;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid orange;
+    padding: ;
+}
+.catbanner button:hover{
+    background-color: black;
+}
+
+.bgc{
+    padding: 50px 160px 0;
+    display: flex;
+}
+
+.bgc .gnd{
+    width: 50%;
+    
+    
+}
+.bgc .gnd img{
+    width: 100%;
+}
+.bgc .abouttext{
+    width: 50%;
+    text-align:left;
+    margin: auto;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+.bgc .abouttext h1{
+    font-size: 50px;
+    color: rgb(53, 58, 63);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.bgc .abouttext h3{
+    font-size: 30px;
+    color: skyblue;
+    margin-bottom: 30px;
+}
+.bgc .abouttext p{
+    font-size: 14px;
+    margin-bottom: 40px;
+    line-height: 20px;
+    color: #666;
+}
+.bgc .abouttext button{
+    background-color: #ff9933;
+    widows: 211px;
+    height: 68px;
+    font-size: 14px;
+    padding: 20px 54px;
+    color: #FFF;
+    font-weight: bold;
+    border: none;
+}
+.bgc .abouttext button:hover{
+    background-color: black;
+    
 }
