@@ -1,0 +1,83 @@
+.banner{
+    background-color: black;
+    display: flex;
+    width: auto;
+    height: 60px;
+    justify-content: space-between;  
+    align-items: center;  
+}
+.banner .tele{
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    margin-left: 170px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.banner .tele h4{
+    padding: 10px;
+}
+.banner .social{
+    display: flex;
+    margin-right: 180px;
+}
+.banner .social img{
+    margin: auto;
+    padding: 5px;
+    border-radius: 999em;
+    max-width: 20px;
+    max-height: 20px;
+}
+.banner h4{
+    color: white;
+}
+
+.navpic{
+    width: auto;
+    height: 100px;
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    font-size: 0;
+    align-items: center;
+}
+.navpic .title{
+    display: flex;
+    margin-left: 170px;
+}
+.navpic .title img{
+    width: auto;
+    height: 60%;
+    margin: 30px 10px;
+}
+.navpic .title h1{
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 30px 10px;
+}
+.navpic nav{
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 30px;
+    color: black;
+}
+.navpic nav:hover{
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
+.navpic .donatebutton {
+    display: flex;
+    margin-right: 180px;
+
+}
+.navpic button{
+    border: solid 2px orange;
+    color: orange;
+    padding: 15px 40px;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.catbanner img{
+    width: max-content;
+    height: 900px;
+}
