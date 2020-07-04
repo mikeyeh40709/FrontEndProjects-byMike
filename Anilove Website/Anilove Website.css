@@ -403,13 +403,13 @@ body{
 .news .newspics .newshostleft{
     position: absolute;
     bottom: 170px;
-    left: 260px;
+    left: 300px;
     color: white;
 }
 .news .newspics .newshostright{
     position: absolute;
     bottom: 170px;
-    right: 220px;
+    right: 250px;
     color: white;
 }
 .news .newspics h4{
