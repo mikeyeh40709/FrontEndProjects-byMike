@@ -1,21 +1,36 @@
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    background-image: url('asset\ 15.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
-
+.uparrow a i{
+    position: fixed;
+    color: orange;
+    font-size: 50px;
+    bottom: 60px;
+    right: 40px;
+    z-index: 1;
+}
 .banner{
-    background-color: black;
+    background-color: #272626;
     display: flex;
     width: auto;
-    height: 60px;
+    height: 50px;
     justify-content: space-between;  
     align-items: center;  
 }
 .banner .tele{
     display: flex;
-    font-size: 20px;
+    font-size: 18px;
     align-items: center;
     margin-left: 170px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.banner i{
+    color: orange;
 }
 .banner .tele h4{
     padding: 10px;
@@ -24,17 +39,13 @@ body{
     display: flex;
     margin-right: 180px;
 }
-.banner .social img{
-    margin: auto;
-    padding: 5px;
-    border-radius: 999em;
-    max-width: 20px;
-    max-height: 20px;
+.banner .social a i{
+    color: white;
+    padding: 0 5px;
 }
 .banner h4{
     color: white;
 }
-
 .navpic{
     width: auto;
     height: 100px;
@@ -43,10 +54,15 @@ body{
     justify-content: space-between;
     font-size: 0;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .navpic .title{
     display: flex;
-    margin-left: 170px;
+    margin-left: 140px;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .navpic .title img{
     width: auto;
@@ -54,66 +70,65 @@ body{
     margin: 30px 10px;
 }
 .navpic .title h1{
-    font-size: 60px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 30px 10px;
+    color: #535353;
+    font-size: 50px;
+    margin: 30px 5px;
+    font-weight: 600;
 }
-.navpic nav{
+.navpic a nav{
     display: inline-block;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
     padding: 0 30px;
     color: black;
+    font-weight: lighter;
 }
 .navpic nav:hover{
     text-decoration: underline;
     text-decoration-color: orange;
+    
 }
-.navpic .donatebutton {
+.navpic .donatebutton{
     display: flex;
     margin-right: 180px;
+    
 }
 .navpic button{
     border: solid 2px orange;
     color: orange;
-    padding: 15px 40px;
+    padding: 13px 30px;
     background-color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer; 
 }
 .navpic button:hover{
     background-color: lightskyblue;
     color: white;
+    transition: linear 0.25s;
+    border: solid 1px white;
 }
-
 .catbanner{
     display: flex;
     position: relative;
 }
 .catbanner img{
     width: 100%;
-    /* background-attachment: fixed; */
 }
 .catbanner .catbannertext{
     display: flex;
     flex-direction: column;
-    /* z-index: 1; */
     position: absolute;
     margin: 200px 170px;
     text-align: left;
 }
 .catbanner h2{
     font-size: 70px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     color: gray;
 }
 .catbanner h1{
     font-size: 80px;
     color:lightskyblue;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .catbanner h4{
     font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .catbanner .catbutton{
     display: flex;
@@ -124,26 +139,44 @@ body{
     width: 200px;
 }
 .catbanner button{
-    height: 75px;
+    height: 65px;
     background-color: orange;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: 2px solid orange;
-    padding: ;
+    border: 1px solid orange;
 }
 .catbanner button:hover{
     background-color: black;
+    transition: linear 0.25s;
+    border: black 1px solid;
 }
-
+.fixphone a{
+    color: orange;
+    font-size: 40px;
+    position: fixed;
+    left: 40px;
+    bottom: 45px;
+    z-index: 10;
+}
+.circle{
+    color: gray;
+    font-weight: bold;
+    font-size: 80px;
+    position: fixed;
+    left: 20px;
+    bottom: 25px;
+    z-index: 9;
+}
+.fixphone a:hover{
+    color: rgb(236, 182, 82);
+    transition: 0.25s;
+}
 .bgc{
     padding: 50px 160px 0;
     display: flex;
+    background-color: white;
 }
-
 .bgc .gnd{
     width: 50%;
-    
-    
 }
 .bgc .gnd img{
     width: 100%;
@@ -152,30 +185,27 @@ body{
     width: 50%;
     text-align:left;
     margin: auto;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
 }
 .bgc .abouttext h1{
     font-size: 50px;
-    color: rgb(53, 58, 63);
-    font-weight: bold;
+    color: #535353;
+    font-weight: 600;
     margin-bottom: 30px;
 }
 .bgc .abouttext h3{
     font-size: 30px;
-    color: skyblue;
+    color: #7ABEE9;
     margin-bottom: 30px;
 }
 .bgc .abouttext p{
     font-size: 14px;
     margin-bottom: 40px;
-    line-height: 20px;
-    color: #666;
+    line-height: 1.2;
+    color: #8D8D8D;
 }
-.bgc .abouttext button{
+.bgc .abouttext a button{
     background-color: #ff9933;
-    widows: 211px;
+    width: 211px;
     height: 68px;
     font-size: 14px;
     padding: 20px 54px;
@@ -183,7 +213,343 @@ body{
     font-weight: bold;
     border: none;
 }
-.bgc .abouttext button:hover{
+.bgc .abouttext a button:hover{
     background-color: black;
+    border: black solid 1px;
+    transition: linear 0.25s;
+    cursor: pointer;
+}
+.howtohelptext{
+    text-align: center;
+    background-color: #F9F9F9;
+
+}
+.howtohelptext h1{
+    font-size: 50px;
+    color: #535353;
+    padding: 50px 0 10px;
     
+}
+.howtohelptext h2{  
+    font-size: 30px;
+    color: #7ABEE9;
+    padding: 0 0 10px;
+}
+.howtohelppic{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color:#F9F9F9;
+}
+.howtohelppic .item h2{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 120px;
+    color: white;
+    z-index: 2;
+}
+.howtohelppic .item{ 
+    width: 370px;
+    font-size: 34px;
+    position: relative;
+}
+.howtohelppic img {
+    height: 85%;
+}
+.howtohelppic .item img:hover{
+    filter: brightness(50%);
+    transition: linear 0.25s;
+}
+.howtohelppic .item h2:hover{
+    color: orange;
+    cursor: pointer;
+}
+.howtohelppic .item h2:hover + img{ 
+    filter: brightness(50%);
+    transition: linear 0.25s;
+}
+.vol{
+    width: 100%;
+    padding: 50px 0 ;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+}
+.vol .volleft{
+    width: 500px;
+    margin-right: 50px;
+    align-items: center;
+}
+.vol .volleft h1{
+    font-size: 50px;
+    text-align: right;
+}
+.vol .volleft img{
+    width: 90%;
+    margin-top: 40px;
+    margin-left: 60px;
+}
+.vol .volright{
+    width: 600px;
+    margin-left: 50px;
+}
+.vol .volright h4{
+    padding: 15px 0 0px;
+    margin: 0 0 40px;
+}
+.vol .volright .btn{
+    margin: 20px 0 0;
+}
+.vol .volright .btn a button{
+    width: 203px;
+    height: 68px;
+    background-color: #ff9933;
+    font-size: 14px;
+    padding: 20px 54px;
+    color: #FFF;
+    font-weight: bold;
+    border: none;
+}
+.vol .volright .btn a button:hover{
+    background-color: black;
+    border: black solid 1px;
+    transition: linear 0.25s;
+    cursor: pointer;
+}
+.vol .upcoming{ 
+    width: 1200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vol .upcoming{
+    position: relative;
+    margin-top: 50px;
+}
+.vol .upcoming .upctext{
+    position: absolute;
+}
+.vol .upcoming .upctext h2{
+    font-size: 50px;
+    margin: 10px 0;
+    color: #535353;
+    font-weight: bold;
+}
+.vol .upcoming .upctext h1{
+    font-size: 60px;
+    margin: 10px 0;
+    color: #7ABEE9;
+    font-weight: bold;
+}
+.vol .upcoming .upctext h4{
+    font-size: 24px;
+    margin: 20px 0;
+}
+.vol .upcoming .upctext button{
+    width: 184px;
+    height: 68px;
+    background-color: #ff9933;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+.vol .upcoming .upctext button:hover{
+    background-color: lightskyblue;
+    transition: linear 0.25s;
+    cursor: pointer;
+}
+
+.dogbg{
+    height: 500px;
+}
+.dogbgline{
+    width: 100%;
+    height: 20px;
+    background-color: orange;
+}
+.news{
+    width: 100%;
+    height: 1200px;
+    /* background-color: #FDFDFD;    */
+    background-color: #FDFDFD;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+.news .newstext h1{
+    color: #535353;
+    font-size: 50px;
+    padding: 50px 0 10px;
+    display: flex;
+}
+.news .newstext h2{
+    color: #7ABEE9;
+    font-size: 30px;
+    padding: 5px 0 0px;
+    display: flex;
+}
+.news .newspics .newshostleft img{
+    border-radius: 50%;
+}
+.news .newspics .newshostright img{
+    border-radius: 50%;
+}
+.news .newspics .newshostleft{
+    position: absolute;
+    bottom: 170px;
+    left: 210px;
+    color: white;
+}
+.news .newspics .newshostright{
+    position: absolute;
+    bottom: 170px;
+    right: 180px;
+    color: white;
+}
+.news .newspics h4{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+.news .newspics h2{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.news .newspics a{
+    text-decoration: none;
+    color: white;
+}
+.news .newspics a:hover{
+    color: orange;
+    transition: linear 0.25s;
+}
+
+.records{
+    width: 100%;
+    height: 400px;
+    background-image: url('./asset\ 18.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+.records img{
+    border-radius: 50%;
+    width: 80%;
+}
+.records h1{
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    padding: 10px 0;
+}
+.records h3{
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 10px 0;
+}
+.seeig{
+    width: 100%;
+    height: 120px;
+    background-color: white;
+    text-align: center;
+    font-size: 40px;
+    color: #434F53;
+    font-weight: 600;
+    padding: 75px 0 0 0 ;
+}
+.fourpets{
+    background-color: white;
+    width: 1381px;
+    height: 294px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+}
+.fourpets .pics{
+    width: 25%;
+}
+.fourpets .pics img{
+    width: 100%;
+}
+
+.fourpets i{
+    width: 345px;
+    height: 294px;
+    background-color: orange;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5px;
+}
+
+.fourpets .pics .fab{
+    position: absolute;
+    bottom: 1px;
+}
+.fourpets .pics .fab:hover{
+    font-size: 50px;
+    transition: linear 0.25s;
+    color: rgba(255, 255, 255, 1);
+    opacity: 0.5;
+    font-weight: bold;
+}
+.footer{
+    width: 100%;
+    height: 450px;
+    background-image: url('./asset\ 19.jpeg');
+    background-position: center;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.footer .logo{
+    display: flex;
+    justify-content: center;
+}
+
+.footer .logo h1{
+    font-weight: 550;
+    font-size: 50px;
+    padding: 10px;
+}
+.footer .footerlink{
+    padding: 50px 10px 0 0;
+    font-size: 48px;
+}
+.footer .footerlink a:nth-child(1){
+    color: #00AEEF;
+}
+.footer .footerlink a:nth-child(2){
+    color: #547CD5;
+}
+.footer .footerlink a:nth-child(3){
+    color: #CC3300;
+}
+.footer .footerlink a:nth-child(4){
+    color: #0075B6;
+}
+.footer .contact h3{
+    padding: 10px 0;
+}
+.footer .contact h3 i {
+    color: #ff9933;
+}
+.footer .contact h4{
+    padding: 20px 0 0 0;
 }
