@@ -403,13 +403,13 @@ body{
 .news .newspics .newshostleft{
     position: absolute;
     bottom: 170px;
-    left: 210px;
+    left: 260px;
     color: white;
 }
 .news .newspics .newshostright{
     position: absolute;
     bottom: 170px;
-    right: 180px;
+    right: 220px;
     color: white;
 }
 .news .newspics h4{
@@ -470,7 +470,7 @@ body{
 }
 .fourpets{
     background-color: white;
-    width: 1381px;
+    width: 100%;
     height: 294px;
     display: flex;
     flex-wrap: wrap;
