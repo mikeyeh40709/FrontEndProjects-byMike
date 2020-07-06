@@ -9,15 +9,49 @@ body{
     justify-content: space-around;
     align-items: center;
     color: white;
+    position: relative;
+}
+.toppanelmsg .toppanelitems > ul{
+    position: absolute;
+    right: 180px;
+    top: 45px;
+    z-index: 1;
+    visibility: hidden;
+    transition: 0.5s;
+    opacity: 0;
+    /* display: none; */
+}
+.toppanelmsg  .toppanelitems > span:focus ~ ul{
+    visibility: visible;
+    /* display: block; */
+    opacity: 1;
+}
+.toppanelmsg .toppanelitems ul{
+    width: 125px;
+    height: 50px;
+    background-color: #679509;
+    padding: 10px 20px;
+    color: white;
+    line-height: 1.3;
+}
+.toppanelmsg .toppanelitems a h3 {
+    border-right: white solid 1px;
 }
 .toppanelmsg span{
     font-weight: bold;
 }
 .toppanelmsg .toppanelitems{
-    display: flex;   
+    display: flex;
 }
 .toppanelmsg h3{
-    padding: 0 10px;
+    padding: 0 15px;
+}
+.toppanelitems a{
+    text-decoration: none;
+    color: white;
+}
+.toppanelitems h3 .fas{
+    padding-right: 5px;
 }
 .headercontainer{
     width: 100%;
@@ -30,8 +64,16 @@ body{
 .headercontainer .headeritems{
     display: flex;
 }
+.headercontainer h3:nth-child(1){
+    color: #86AE34;
+}
 .headercontainer h3{
-    padding: 10px;
+    padding: 15px;
+    color: #a5a5a5;
+    font-weight: 600;
+}
+.headercontainer a{
+    text-decoration: none;
 }
 .mainbanner{
     width: 100%;
@@ -177,6 +219,15 @@ body{
     font-size: 14px;
     margin: 40px 20px;
     font-weight: 600;
+    color: #a5a5a5;
+    cursor: pointer;
+}
+.productbanner h4:nth-child(1){
+    color: #86AE34;
+}
+.productbanner h4:hover{
+    color: #86AE34;
+    font-weight: 600;
 }
 .products{
     width: 100%;
@@ -233,10 +284,10 @@ body{
     position: relative;
 }
 .fruitnveg img{
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: 652px;
     position: absolute;
-    left: -160px;
+    /* left: -160px; */
 }
 .fruitnveg .fruitnvegtext{
     height: 652px;
@@ -258,13 +309,15 @@ body{
     margin: 0 0 50px 0;
 }
 .fruitnveg .fruitnvegtext button{
-    font-weight: 600;
+    font-weight: 550;
     font-size: 14px;
     color: white;
     background-color: #86AE34;
     border: none;
     padding: 22px 42px;
+    cursor: pointer;
 }
+
 .vegheart{
     width: 100%;
     height: 700px;
@@ -347,6 +400,11 @@ body{
     font-size: 12px;
     margin: 20px;
     cursor: pointer;
+}
+
+.blog .blogitem .item button:hover{
+    background-color: black;
+    transition: linear 0.25s;
 }
 .blog .blogitem .item a{
     text-decoration: none;
@@ -492,7 +550,7 @@ body{
     justify-content: center;
     align-content: flex-start;
     position: absolute;
-    top: 40%;
+    top: 35%;
     left: 10%;
 }
 .footer .footerinfo .info{
@@ -509,4 +567,5 @@ body{
     color: #79787F;
     font-size: 15px;
     padding: 10px;
+    line-height: 1.3;
 }
