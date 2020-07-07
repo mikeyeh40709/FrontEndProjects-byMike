@@ -81,6 +81,7 @@
     width: 695px;
     height: 430px;
     z-index: 1;
+    /* opacity: 0.5; */
 }
 .middlebanners .probanners:nth-child(odd){
     width: 960px;
@@ -205,6 +206,14 @@
     margin-top: -300px;
     margin-left: -350px;
 }
+.middlebanners .probanners:nth-child(odd) .youtubeicon img{
+    width: 57px;
+    height: 36px;
+    position: relative;
+    z-index: 10;
+    margin-top: 65px;
+    margin-left: -140px;
+}
 /* Bottom image */
 
 /* even image */
@@ -222,7 +231,7 @@
     width: 300px;
     height: 388px;
     position: absolute;
-    right: -2%;
+    right: 8%;
     top: 8%;
     z-index: 5;
 }
@@ -275,7 +284,7 @@
     position: absolute;
     background-color: rgb(240, 231, 231);
     top: 70%;
-    left: 10%;
+    left: 30%;
     z-index: 5;
 }
 .middlebanners .probanners:nth-child(even) .bottomtext{
@@ -311,12 +320,22 @@
     color: red;
 }
 .middlebanners .probanners:nth-child(even) .grayspace{
-    width: 439px;
-    height: 290px;
+    width: 518px;
+    height: 413px;
     background-color: #EEEEEE;
     opacity: 0.5;
     /* position: relative; */
-    margin-top: -300px;
-    margin-right: -350px;
+    /* margin-top: -200px; */
+    /* z-index: -1; */
+    margin-right: -800px;
+    margin-top: -120px;
+}
+.middlebanners .probanners:nth-child(even) .youtubeicon img{
+    width: 57px;
+    height: 36px;
+    margin-right: 235px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 5;
 }
 
