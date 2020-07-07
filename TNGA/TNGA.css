@@ -9,9 +9,24 @@
     position: fixed;
     z-index: 10;
 }
+.header a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* transition: 2s; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header a:hover{
+    border-bottom: 3px solid orange;
+}
 .header .headerbanner{
     display: flex;
-    margin-left: 300px;
+    justify-content: center;
+    align-items: center;
 }
 .header .headerbanner .items{
     width: 184px;
@@ -21,6 +36,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+.header .headerbanner .items:hover{
+    /* border-bottom: 3px solid orange; */
 }
 .fiveadvantagesbanner{
     width: 100%;
@@ -65,12 +84,13 @@
     justify-content: center;
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: lighter;
+    margin: 0 10px;
 }
 .middlebanners{
     width: 100%;
-    height: 3600px;
+    height: 4532px;
     background-color: white;
-    margin-top: 100px;
+    margin-top: 35px;
     display: flex;
     /* flex-wrap: wrap; */
     flex-direction: column;
@@ -97,7 +117,7 @@
     height: 388px;
     position: absolute;
     left: -2%;
-    top: 8%;
+    top: 2.4%;
     z-index: 5;
 }
 .middlebanners .probanners:nth-child(odd) .number .upside{
@@ -148,7 +168,7 @@
     height: 235px;
     position: absolute;
     background-color: rgb(240, 231, 231);
-    top: 70%;
+    top: 74.5%;
     left: 10%;
     z-index: 5;
 }
@@ -232,7 +252,7 @@
     height: 388px;
     position: absolute;
     right: 8%;
-    top: 8%;
+    top: 2.4%;
     z-index: 5;
 }
 .middlebanners .probanners:nth-child(even) .number .upside{
@@ -283,8 +303,8 @@
     height: 150px;
     position: absolute;
     background-color: rgb(240, 231, 231);
-    top: 70%;
-    left: 30%;
+    top: 75%;
+    left: 36%;
     z-index: 5;
 }
 .middlebanners .probanners:nth-child(even) .bottomtext{
@@ -327,13 +347,13 @@
     /* position: relative; */
     /* margin-top: -200px; */
     /* z-index: -1; */
-    margin-right: -800px;
-    margin-top: -120px;
+    margin-right: -700px;
+    margin-top: -170px;
 }
 .middlebanners .probanners:nth-child(even) .youtubeicon img{
     width: 57px;
     height: 36px;
-    margin-right: 235px;
+    margin-right: 130px;
     margin-top: 20px;
     position: relative;
     z-index: 5;
