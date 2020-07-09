@@ -38,9 +38,6 @@
     align-items: center;
     
 }
-.header .headerbanner .items:hover{
-    /* border-bottom: 3px solid orange; */
-}
 .fiveadvantagesbanner{
     width: 100%;
     height: 150px;
