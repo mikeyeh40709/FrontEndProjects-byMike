@@ -19,9 +19,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* background-image: linear-gradient(0deg,orange,100); */
 }
 .header a:hover{
-    border-bottom: 3px solid orange;
+    /* border-bottom: 3px solid orange; */
 }
 .header .headerbanner{
     display: flex;
@@ -90,9 +92,18 @@
     display: block;
     width: 100%;
     height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-image: linear-gradient(0deg,#ae0014, 100%, transparent 100%);
+    background-position: 0 40px ;
+    transition: 0.25s;
+    background-repeat: no-repeat;
+}
+.fiveadvantagesitems .item a:hover{
+    background-position: 0 0;
 }
 .middlebanners{
     width: 100%;
@@ -189,10 +200,23 @@
     font-weight: bold;
     font-family: 'Noto Sans TC', sans-serif;
     margin-bottom: 5px;
+
+    /* 標題後加線條 */
+    display: flex;
+    align-items: center;
 }
 .middlebanners .probanners:nth-child(odd) .bottomtext h3::after{
-    content: '————————————————————————————————';
+    content: '';
+    width: 20px;
+    height: 3px;
+    background-color: #ae0014;
+    display: block;
+    flex-grow: 1;
+    margin-left: 3px;
 }
+/* 標題後加線條 */
+
+
 .middlebanners .probanners:nth-child(odd) .bottomtext span{
     background: black;
     color: white;
@@ -216,15 +240,6 @@
     width: 600px;
     height: 150px;
 }
-/* .middlebanners .probanners:nth-child(odd) .number::after{
-    content: '';
-    width: 439px;
-    height: 290px;
-    background-color: #EEE;
-    position: absolute;
-    top: 10%;
-    left: 600px;
-} */
 .middlebanners .probanners:nth-child(odd) .grayspace{
     width: 439px;
     height: 290px;
@@ -324,10 +339,23 @@
     font-weight: bold;
     font-family: 'Noto Sans TC', sans-serif;
     margin-bottom: 5px;
+
+    /* 標題後線條 */
+    display: flex;
+    align-items: center;
 }
 .middlebanners .probanners:nth-child(even) .bottomtext h3::after{
-    content: '————————————————————————————————';
+    content: '';
+    width: 20px;
+    height: 2px;
+    display: block;
+    background-color: rgb(150, 0, 0);
+    flex-grow: 1;
+    margin-left: 5px;
+    /* 標題後線條 */
 }
+
+
 .middlebanners .probanners:nth-child(even) .bottomtext span{
     background: black;
     color: white;
@@ -371,24 +399,11 @@
 .thingsvideo{
     width: auto;
     height: 612px;
-    /* background-color: lightblue; */
     background-color: white;
-    /* text-align: center; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-/* .thingsvideo video{
-    width: 900px;
-    height: 624px;
-} */
-/* .thingsvideo img{
-    padding: 150px 0;
-} */
-/* .thingsvideo video{
-    opacity: 0.1;
-    background-color: white;
-} */
 .thingsvideo .words h1{
     font-size: 100px;
     font-family: 'Noto Sans TC', sans-serif;
