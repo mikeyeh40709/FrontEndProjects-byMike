@@ -1,12 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BuildSchool</title>
     <link rel="stylesheet" href="/Website Decoration/BuildSchool/BuildSchool.css">
+    <link rel="stylesheet" href="/Day5/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/Day5/dist/assets/owl.theme.default.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cd487e856f.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-    
+
+    <input type="checkbox" name="" id="menu-control">
+    <input type="checkbox" id="msg">
+    <input type="checkbox" id="msg">
+
+    <div class="mainheader">
+        <div class="logo-group">
+            <label class="hb" for="menu-control">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <a href="https://www.build-school.com/"><img src="/Website Decoration/BuildSchool/BS Pics/BSlogo.png"
+                    alt="BSlogo"></a>
+            <div class="bs">
+                <a href="https://www.build-school.com/">
+                    <h1>Build School</h1>
+                </a>
+                <a href="https://www.build-school.com/">
+                    <h3>developer career builder</h3>
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="navitem">
+                <a href="https://docs.google.com/presentation/d/e/2PACX-1vR_bJBOVwI5dxpvGpHjxf_IudLWApraTJpXCPfLDHkrYBM_JW48_82wdnfoecd8sZJ588pn9o961vpy/pub?start=false&loop=false&delayms=60000&slide=id.g82fbb326d8_0_32"
+                    target="_blank">
+                    <h3>台北班簡介</h3>
+                </a>
+            </div>
+            <div class="navitem">
+                <a href="https://docs.google.com/presentation/d/e/2PACX-1vTza7IHn1q6V0mSseOmqZWvWPNtbDsMNTgrN-Knb7hxib-ZPoUa5Pg1jQn4R22skyTlk0dUWHV1j9Du/pub?start=false&loop=true&delayms=60000&slide=id.p1"
+                    target="_blank">
+                    <h3>新竹班簡介</h3>
+                </a>
+            </div>
+            <div class="navitem">
+                <a href="https://blog.build-school.com/2016/12/25/buildschool-2017-opening/" target="_blank">
+                    <h3>中華大學校內班簡介</h3>
+                </a>
+            </div>
+            <div class="navitem">
+                <a href="https://blog.build-school.com/">
+                    <h3>Blog</h3>
+                </a>
+            </div>
+            <div class="navitem">
+                <a href="https://blog.build-school.com/2017/03/03/inspirementor-list/">
+                    <h3>歷屆老師</h3>
+                </a>
+            </div>
+            <div class="navitem">
+                <a href="#about">
+                    <h3>關於</h3>
+                </a>
+            </div>
+            <div class="navitem">
+                <label for="msg">
+                    <h3>問題及洽詢</h3>
+                </label>
+                <!-- <a href="#"><h3></h3></a> -->
+            </div>
+        </nav>
+        <div class="form">
+            <div class="text">
+                <h1>合作洽談及報名詢問</h1>
+                <h3>1. 有興趣成為我們的講師或擔任指導學生的企業導師 (Mentor)</h3>
+                <h3>2. 對課程有問題的同學<br>填寫下方表格，或請 Email 到contact@build-school.com</h3>
+            </div>
+            <input type="text" name="" id="" placeholder="姓名*">
+            <input type="text" name="" id="" placeholder="Email*">
+            <input type="text" name="" id="" placeholder="電話*">
+            <input type="text" name="" id="" placeholder="報名請填學校/系所/年級:企業導師請填公司">
+            <input type="text" name="" id="" placeholder="主旨:例如,我要報名,或我想擔任企業導師">
+            <input type="text" name="" id="" style="height: 150px;" placeholder="留言：請寫下你的問題及說明*">
+            <button>送出</button>
+            <label for="msg"></label>
+        </div>
+    </div>
+
+
+    <div class="carousel">
+        <div class="owl-carousel owl-theme">
+            <div>
+                <img src="https://picsum.photos/1000/400/?random=5">
+            </div>
+            <div>
+                <img src="https://picsum.photos/1000/400/?random=6">
+            </div>
+            <div>
+                <img src="https://picsum.photos/1000/400/?random=7">
+            </div>
+            <div>
+                <img src="https://picsum.photos/1000/400/?random=8">
+            </div>
+            <div>
+                <img src="https://picsum.photos/1000/400/?random=9">
+            </div>
+            <div>
+                <img src="https://picsum.photos/1000/400/?random=16">
+            </div>
+            <div>
+                <img src="https://picsum.photos/1000/400/?random=11">
+            </div>
+            <div>
+                <img src="https://picsum.photos/1000/400/?random=10">
+            </div>
+            <div>
+                <img src="https://picsum.photos/1000/400/?random=12">
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/Day5/dist/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                center: true,
+                loop: true,
+                nav: true,
+                // margin: 5,
+                responsive: {
+                    0: {
+                        items: 1,
+
+                    },
+                    768: {
+                        items: 1,
+
+                    },
+                    1200: {
+                        items: 1,
+
+
+                    }
+                }
+            });
+        });
+    </script>
+    <div class="midbanner" id="about">
+        <div class="content">
+            <h1>"我們的理念"</h1>
+            <h2>Build = 將程式碼編譯及建置成可執行的軟體</h2>
+            <h2>Build = 動手做</h2>
+            <h2>Build = 軟體開發職涯的打造者</h2>
+        </div>
+        <div class="midbanner-mask">
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-1.png" alt="computer">
+                    <h1>Build School</h1>
+                    <h2>實作及就業導向的軟體開發學校</h2>
+                    <h2>(Employment orientation)</h2>
+                    <h3>因應數位新時代的來臨，軟體、App、IoT、SaaS、雲端平台的應用需求大爆炸，軟體工程師的招募需求持續上升，以2016年5月求職平台的統計資料，從高科技、電商、金融、傳產、網路服務、軟體資訊、新創等各行業，台灣至少有27,000位軟體開發工程師的職缺，甚至日本、新加坡等軟體及App外商也來台灣求才。為了彌補企業求才所需技能及實務教學上的落差，我們將前進校園，幫助想搭上軟體開發及互聯網經濟這艘火箭的同學們，打造更有競爭力的職涯!
+                    </h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-2.png" alt="konfu">
+                    <h1>動手實作才是真學習</h1>
+                    <h2>打造專案作品的學習方式</h2>
+                    <h2>(Project-based Learning)</h2>
+                    <h3>透過身經百戰的實務講師、各大企業的資深軟體工程師或CTO，帶領同學實作一個真正能運作的產品開發，解決真實世界的問題，透過專題過程中的實作，培養解決問題的能力，這裏不只是程式教學或教育訓練，學的不只是技能，而是Learn
+                        how to learn，以因應變化多端的軟體開發技能，及自我尋找解答的能力</h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-3.png" alt="resume">
+                    <h1>就業銜接</h1>
+                    <h2>真正企業職場所需技能</h2>
+                    <h2>(Career Readiness)</h2>
+                    <h3>除了透過打造專題作品過程，學到了技術及硬技能外，不同於一般的軟體培訓，我們更加入了簡報技巧、履歷及面試準備、以及真正軟體開發的團隊溝通及運作，這些軟實力 (Soft-Skill)
+                        的培養，讓同學能提早做好準備，在職場上成為一位專業的軟體工程師!</h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-4.png" alt="rocket">
+                    <h1>連結及影響力</h1>
+                    <h2>企業導師的連結</h2>
+                    <h2>(Mentor Network)</h2>
+                    <h3>每一位在軟體開發上有實務經驗的企業導師，他們是各大企業的主管、資深軟體工程師或 CTO，其人際連結及資源將帶給同學更多更好的就業機會，你將比別人站得更高，看得更遠!</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="midbanner">
+        <div class="content">
+            <h1>18 - 24週的實作及作品開發 - 從訓練、就業、到企業連結</h1>
+        </div>
+        <div class="midbanner-mask"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <h2>第 1-4 個月</h2>
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-5.png" alt="computer2">
+                    <h1>程式基礎教學</h1>
+                    <h3>業界實戰講師</h3>
+                    <h3>企業主管/創業家/CTO 演講</h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <h2>第 5-6 個月</h2>
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-6.png">
+                    <h1>作品導向實作</h1>
+                    <h3>Web / App 作品開發 - 企業導師指導</h3>
+                    <h3>不只是 Demo - 真實可運作成果</h3>
+                    <h3>團隊開發 - 真實軟體開發團隊的運作及分工<br>(Agile 敏捷, kanban 看板, CI 自動化建置 ...)</h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <h2>第 6-7 個月</h2>
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-7.png" alt="award">
+                    <h1>作品發表</h1>
+                    <h3>簡報及溝通技巧</h3>
+                    <h3>作品及程式碼講解</h3>
+                    <h3>個人履歷準備 – Github, codepen …</h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <h2>未來及展望</h2>
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-8.png" alt="medal">
+                    <h1>就業及企業導師諮詢</h1>
+                    <h3>就業媒合或未來職涯諮詢</h3>
+                    <h3>企業導師 -人際連結及資源</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="midbanner">
+        <div class="content">
+            <h1>在課程及作品實作中，將採用這些工具 - 熟悉實務上軟體開發團隊的運作、分工及真實專案的流程</h1>
+        </div>
+        <div class="midbanner-mask"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-9.png" alt="git">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-10.png" alt="gitcat">
+                    <h2>版本控管及程式碼管理</h2>
+                    <h3>學員之練習及作品之程式碼，皆採用主流的 git 當版本控管，熟悉版控的各種操作及實務專案運用; 課程中公開之練程式碼，提交至 GitHub 上，其它學員可參考或供講師 Code
+                        Review 檢閱，並熟悉 Open Source 生態及工具</h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-11.png" alt="vsstudio">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-12.png" alt="trella">
+                    <h2>作品開發及團隊管理</h2>
+                    <h3>Web / App 作品開發 - 企業導師指導除了使用 GitHub 外，專題開發階段也將使用 Microsoft Azure DevOps Services (原名Visual
+                        Studio Team Services) 進行團隊開發、包括程式碼管理、工作項目追蹤、自動化建置等，熟悉一個軟體開發專案之流程、分工及日常工作。</h3>
+                    <h3>也可透過目前許多開發團隊常用的專案管理及看板工具 - Trello，進行工作分派、追蹤、或整個班的工作事項管理</h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-13.png" alt="Azure">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-14.png" alt="SQL">
+                    <h2>雲端平台及服務</h2>
+                    <h3>雲端平台的使用已逐漸成為一個成熟軟體開發團隊之基礎，並讓開發、測試、佈署工作更加的便利及自動化。因此學員將使用 Microsoft Azure
+                        當成作品及專案應用系統執行的雲端平台，包括 Azure App Service 建立網站服務、Azure SQL Database 建立資料庫服務</h3>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <div class="col-12">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-15.png" alt="MicrosoftTeams">
+                    <img src="/Website Decoration/BuildSchool/BS Pics/Build School-16.png" alt="slack">
+                    <h2>團隊溝通協作及通知</h2>
+                    <h3>課程過程中的線上討論、遠端溝通、或技術分享，將可透過 Microsoft Teams 或Slack 工具。另外練習的程式碼提交至 GitHub、或是 Trello
+                        上的工作狀態更新，或是 Azure DevOps 上自動化建置的狀態，皆可發通知至 Microsoft Teams 或
+                        Slack，透過自動化提升工作效率，並熟悉一個軟體開發團隊的協同合作</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="midbanner">
+        <div class="content">
+            <h1>我們的講師及企業導師擁有在這些公司的工作經歷、擔任主管或資深工程師</h1>
+        </div>
+        <div class="midbanner-mask"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <img src="/Website Decoration/BuildSchool/BS Pics/Build School-17.png" alt="MicrosoftLogo">
+                <img src="/Website Decoration/BuildSchool/BS Pics/Build School-21.png" alt="twMVC">
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <img src="/Website Decoration/BuildSchool/BS Pics/Build School-18.png" alt="Kingston">
+                <img src="/Website Decoration/BuildSchool/BS Pics/Build School-22.png" alt="TREND">
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <img src="/Website Decoration/BuildSchool/BS Pics/Build School-19.png" alt="KERRY">
+                <img src="/Website Decoration/BuildSchool/BS Pics/Build School-23.png" alt="gamania">
+            </div>
+            <div class="col-md-12 col-lg-6 col-xg-3">
+                <img src="/Website Decoration/BuildSchool/BS Pics/Build School-20.png" alt="SKILLTREE">
+                <img src="/Website Decoration/BuildSchool/BS Pics/Build School-24.png" alt="leopardmobile">
+            </div>
+        </div>
+    </div>
+    <div class="midbanner">
+        <div class="content">
+            <h1>合作及接洽</h1>
+        </div>
+        <div class="midbanner-mask"></div>
+    </div>
+    <div class="footer">
+        <h3>有興趣軟體工程師徵才、或成為我們的講師或擔任指導學生的企業導師 (Inspire Mentor)，請與我們連絡</h3>
+        <div class="box">
+            <a href="contact@build-school.com"><i class="fas fa-envelope-square"></i></a>
+            <a href="https://www.facebook.com/buildschool.edu/"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.youtube.com/channel/UC4dTBtbEIwhtKRy2UhkVYig"><i class="fab fa-youtube-square"></i></a>
+        </div>
+        <h3><i class="fas fa-map-marker-alt"></i>台北: 台北市忠孝東路三段96號11F-1 (台北科大對面/忠孝新生站3號出口) 新竹: 中華大學行政大樓圖資處</h3>
+        <h5><a href="https://www.build-school.com/privacy">隱私權宣告</a>© 2020 by Build School</h5>
+    </div>
+
 </body>
+
 </html>
