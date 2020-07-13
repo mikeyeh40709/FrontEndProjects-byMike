@@ -12,7 +12,12 @@
 #menu-control {
     display: none;
 }
-#msg{
+
+#msg {
+    display: none;
+}
+
+#circledots {
     display: none;
 }
 
@@ -22,7 +27,7 @@
 
 .midbanner {
     width: 100%;
-    height: 200px;
+    height: 158px;
     background-image: url('./banner-city.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,11 +39,14 @@
     align-items: center;
     color: white;
     position: relative;
-    
+
     margin-top: -10px;
+
     .content {
         z-index: 1;
-        h1,h2{
+
+        h1,
+        h2 {
             font-weight: lighter;
         }
     }
@@ -97,6 +105,151 @@
             }
         }
     }
+
+    #circledots {
+        &:checked {
+            ~.fbmessagecircle {
+                .circledots {
+                    span {
+                        &:nth-child(3) {
+                            transform: rotate(225deg);
+                            width: 25px;
+                            height: 5px;
+                            border-radius: 0;
+                            transition: 0.25s;
+                        }
+
+                        &:nth-child(2) {
+                            display: none;
+                            transition: 0.25s;
+                        }
+
+                        &:nth-child(1) {
+                            transform: rotate(-225deg);
+                            width: 25px;
+                            height: 5px;
+                            border-radius: 0;
+                            transition: 0.25s;
+                        }
+                    }
+                }
+            }
+            ~ .circlefilter{
+                left: 0;
+                transition: 0.25s;
+            }
+        }
+    }
+
+    .fbmessage {
+        position: fixed;
+        bottom: 3.7%;
+        right: 4%;
+        z-index: 100;
+        font-size: 53px;
+
+        a {
+            text-decoration: none;
+
+            i {
+                color: white;
+            }
+        }
+    }
+
+    .fbmessagecircle {
+        position: fixed;
+        width: 100%;
+        bottom: 3.7%;
+        z-index: 50;
+        .message {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            .fa-circle {
+                &:first-child {
+                    margin-left: -148px;
+                }
+
+                &:last-child {
+                    margin-right: -148px;
+                }
+
+                font-size: 70px;
+                color: #1E90FF;
+            }
+        }
+
+        .circledots {
+            position: fixed;
+            bottom: 9.5%;
+            left: 9.5%;
+            transform: rotate(90deg);
+
+            span {
+                position: absolute;
+                display: block;
+                width: 10px;
+                height: 10px;
+                background-color: white;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+
+                &:first-child {
+                    transform: translateY(-12px);
+                    border-radius: 100%;
+                    transition: 0.25s;
+                }
+
+                &:nth-child(2) {
+                    border-radius: 100%;
+                    transition: 0.25s;
+                }
+
+                &:last-child {
+                    transform: translateY(12px);
+                    border-radius: 100%;
+                    transition: 0.25s;
+                }
+            }
+        }
+    }
+
+    .circlefilter {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        background-color: rgba(97, 93, 86,0.9);
+        // filter: opacity(0.04);
+        z-index: 4;
+        transition: 0.25s;
+        .filterinfos{
+            position: absolute;
+            bottom: 15%;
+            left: 4%;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            i{
+                font-size: 55px;
+                margin: 10px 0;
+                &:first-child{
+                    color: rgba(205, 32, 31, 1);
+                }
+                &:last-child{
+                    color: blue;
+                }
+            }
+        }
+        
+    }
+
 
 
     .mainheader {
@@ -161,7 +314,8 @@
                     display: none;
                 }
             }
-            a{
+
+            a {
                 text-decoration: none;
                 color: black;
             }
@@ -195,15 +349,18 @@
                 justify-content: center;
                 align-content: center;
                 position: relative;
-                a{
+
+                a {
                     // text-decoration: ;
-                    color: black;                    
+                    color: black;
                 }
-                label{
+
+                label {
                     cursor: pointer;
                     text-decoration: underline;
                 }
-                &::after{
+
+                &::after {
                     // border-top: 1px solid black;
                     // border-radius: 50%;
                     // border-collapse: collapse;
@@ -213,13 +370,15 @@
                     height: 3px;
                     position: absolute;
                 }
-                
+
             }
         }
-        .form{
+
+        .form {
             display: none;
         }
-        .container{
+
+        .container {
             text-align: center;
         }
 
@@ -275,21 +434,53 @@
         position: relative;
     }
 
-    #msg{
-        &:checked{
-            ~.mainheader{
-                .form{
+    .circlefilter {
+        display: none;
+    }
+
+    .fbmessage {
+        position: fixed;
+        bottom: 3.8%;
+        right: 3.05%;
+        z-index: 5;
+        font-size: 45px;
+
+        .fab {
+            color: white;
+        }
+    }
+
+    .fbmessagecircle {
+        position: fixed;
+        bottom: 2.6%;
+        right: 2.6%;
+        z-index: 4;
+        font-size: 60px;
+        color: #1E90FF;
+
+        .fas {
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    #msg {
+        &:checked {
+            ~.mainheader {
+                .form {
                     right: 0;
                     transition: 0.75s;
                 }
-                ::before{
+
+                ::before {
                     left: 0px;
                     transition: 0.75s;
                 }
             }
         }
     }
-    
+
     .mainheader {
         width: 100%;
         height: 120px;
@@ -314,10 +505,11 @@
             }
 
             .bs {
-                a{
+                a {
                     text-decoration: none;
                     color: black;
                 }
+
                 h1 {
                     font-weight: lighter;
                 }
@@ -336,83 +528,95 @@
 
             .navitem {
                 padding: 0 15px;
-                a{
+
+                a {
                     text-decoration: none;
-                    h3{
+
+                    h3 {
                         transition: 0.35s;
-                        &:hover{
+
+                        &:hover {
                             transition: 0.35s;
                             color: steelblue;
                         }
                     }
                 }
+
                 h3 {
                     color: black;
                     font-size: 18px;
                     font-weight: 550;
                 }
-                & + .navitem{
+
+                &+.navitem {
                     border-left: black 1px solid;
                 }
-                label{
+
+                label {
                     cursor: pointer;
-                    h3{
-                        &:hover{
+
+                    h3 {
+                        &:hover {
                             transition: 0.35s;
                             color: steelblue;
                         }
                     }
                 }
-                
+
             }
         }
-        .form{
+
+        .form {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 20%;
+            width: 30%;
             height: 100%;
             position: fixed;
-            right: -20%;
+            right: -30%;
             top: 0;
             background-color: rgba(8, 0, 0, 1);
             color: white;
             transition: 0.75s;
 
-            .text{
+            .text {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 padding: 30px;
-                h1{
+
+                h1 {
                     color: #74F9FF;
                 }
-                h3{
+
+                h3 {
                     margin-top: 5px;
                 }
             }
-            input{
+
+            input {
                 width: 80%;
                 padding: 5px;
                 margin: 0 0 8px;
             }
-            button{
+
+            button {
                 width: 80px;
                 height: 40px;
                 background-color: lightseagreen;
                 border: none;
                 color: white;
-            }    
+            }
         }
-        ::before{
+
+        ::before {
             content: '';
-            width: 80%;
+            width: 70%;
             height: 100%;
             top: 0;
-            left: -80%;
-            // left: ;
+            left: -70%;
             position: fixed;
             background-color: rgb(97, 93, 86);
             filter: opacity(0.04);
@@ -422,10 +626,44 @@
 
     .carousel {
         width: 100%;
+        position: relative;
 
         img {
             width: 100%;
             min-width: 360px;
+        }
+
+        .carouselbanner {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            z-index: 1;
+            bottom: 20%;
+
+            .register {
+                width: 250px;
+                // height: 50px;
+                background-color: rgba(0, 180, 255, 0.8);
+                margin: 0 10px;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+
+                    h3 {
+                        font-weight: lighter;
+                    }
+                }
+            }
         }
     }
 
@@ -663,11 +901,11 @@ div[class^="col-"] {
     margin-bottom: 10px;
 }
 
-.container{
+.container {
     text-align: center;
-    padding: 50px 0;
+    padding: 15px 0;
     background-color: white;
-    
+
     .row {
         display: flex;
         flex-wrap: wrap;
@@ -675,15 +913,32 @@ div[class^="col-"] {
         align-content: center;
         text-align: center;
     }
-    img{
+
+    img {
         padding: 20px;
+    }
+
+    .col-12 {
+        h1 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 14px;
+        }
+
+        padding: 10px 0;
     }
 
 }
 
-.footer{
+.footer {
     width: 100%;
-    height: 300px;
+    height: 250px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -691,12 +946,37 @@ div[class^="col-"] {
     align-items: center;
     text-decoration: none;
     position: absolute;
-    .box{
+
+    .box {
         font-size: 50px;
         color: orange;
-        
+
+        .fas {
+            color: rgba(205, 32, 31, 1);
+        }
+
+        .fab {
+            color: rgba(205, 32, 31, 1);
+        }
+
+        .fa-facebook-square {
+            color: blue;
+        }
     }
-    h5{
+
+    h4 {
+        font-size: 18px;
+    }
+
+    h5 {
         padding-top: 25px;
+
+        a {
+            color: black;
+        }
+    }
+
+    .fa-map-marker-alt {
+        color: blue;
     }
 }

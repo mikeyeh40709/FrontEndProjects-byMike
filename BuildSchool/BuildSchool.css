@@ -17,13 +17,17 @@
   display: none;
 }
 
+#circledots {
+  display: none;
+}
+
 .main-header img {
   vertical-align: middle;
 }
 
 .midbanner {
   width: 100%;
-  height: 200px;
+  height: 158px;
   background-image: url("./banner-city.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -50,7 +54,8 @@
   z-index: 1;
 }
 
-.midbanner .content h1, .midbanner .content h2 {
+.midbanner .content h1,
+.midbanner .content h2 {
   font-weight: lighter;
 }
 
@@ -88,6 +93,143 @@
             transform: rotate(135deg);
     -webkit-transition: 0.25s cubic-bezier(0.29, 1.17, 0.56, 1.43);
     transition: 0.25s cubic-bezier(0.29, 1.17, 0.56, 1.43);
+  }
+  #circledots:checked ~ .fbmessagecircle .circledots span:nth-child(3) {
+    -webkit-transform: rotate(225deg);
+            transform: rotate(225deg);
+    width: 25px;
+    height: 5px;
+    border-radius: 0;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  #circledots:checked ~ .fbmessagecircle .circledots span:nth-child(2) {
+    display: none;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  #circledots:checked ~ .fbmessagecircle .circledots span:nth-child(1) {
+    -webkit-transform: rotate(-225deg);
+            transform: rotate(-225deg);
+    width: 25px;
+    height: 5px;
+    border-radius: 0;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  #circledots:checked ~ .circlefilter {
+    left: 0;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  .fbmessage {
+    position: fixed;
+    bottom: 3.7%;
+    right: 4%;
+    z-index: 100;
+    font-size: 53px;
+  }
+  .fbmessage a {
+    text-decoration: none;
+  }
+  .fbmessage a i {
+    color: white;
+  }
+  .fbmessagecircle {
+    position: fixed;
+    width: 100%;
+    bottom: 3.7%;
+    z-index: 50;
+  }
+  .fbmessagecircle .message {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .fbmessagecircle .message .fa-circle {
+    font-size: 70px;
+    color: #1E90FF;
+  }
+  .fbmessagecircle .message .fa-circle:first-child {
+    margin-left: -148px;
+  }
+  .fbmessagecircle .message .fa-circle:last-child {
+    margin-right: -148px;
+  }
+  .fbmessagecircle .circledots {
+    position: fixed;
+    bottom: 9.5%;
+    left: 9.5%;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .fbmessagecircle .circledots span {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .fbmessagecircle .circledots span:first-child {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+    border-radius: 100%;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  .fbmessagecircle .circledots span:nth-child(2) {
+    border-radius: 100%;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  .fbmessagecircle .circledots span:last-child {
+    -webkit-transform: translateY(12px);
+            transform: translateY(12px);
+    border-radius: 100%;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  .circlefilter {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background-color: rgba(97, 93, 86, 0.9);
+    z-index: 4;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  .circlefilter .filterinfos {
+    position: absolute;
+    bottom: 15%;
+    left: 4%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    z-index: 100;
+  }
+  .circlefilter .filterinfos i {
+    font-size: 55px;
+    margin: 10px 0;
+  }
+  .circlefilter .filterinfos i:first-child {
+    color: #cd201f;
+  }
+  .circlefilter .filterinfos i:last-child {
+    color: blue;
   }
   .mainheader {
     position: -webkit-sticky;
@@ -253,6 +395,30 @@
   .body {
     position: relative;
   }
+  .circlefilter {
+    display: none;
+  }
+  .fbmessage {
+    position: fixed;
+    bottom: 3.8%;
+    right: 3.05%;
+    z-index: 5;
+    font-size: 45px;
+  }
+  .fbmessage .fab {
+    color: white;
+  }
+  .fbmessagecircle {
+    position: fixed;
+    bottom: 2.6%;
+    right: 2.6%;
+    z-index: 4;
+    font-size: 60px;
+    color: #1E90FF;
+  }
+  .fbmessagecircle .fas:last-child {
+    display: none;
+  }
   #msg:checked ~ .mainheader .form {
     right: 0;
     -webkit-transition: 0.75s;
@@ -360,10 +526,10 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 20%;
+    width: 30%;
     height: 100%;
     position: fixed;
-    right: -20%;
+    right: -30%;
     top: 0;
     background-color: #080000;
     color: white;
@@ -406,10 +572,10 @@
   }
   .mainheader ::before {
     content: '';
-    width: 80%;
+    width: 70%;
     height: 100%;
     top: 0;
-    left: -80%;
+    left: -70%;
     position: fixed;
     background-color: #615d56;
     -webkit-filter: opacity(0.04);
@@ -419,10 +585,49 @@
   }
   .carousel {
     width: 100%;
+    position: relative;
   }
   .carousel img {
     width: 100%;
     min-width: 360px;
+  }
+  .carousel .carouselbanner {
+    width: 100%;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    z-index: 1;
+    bottom: 20%;
+  }
+  .carousel .carouselbanner .register {
+    width: 250px;
+    background-color: rgba(0, 180, 255, 0.8);
+    margin: 0 10px;
+  }
+  .carousel .carouselbanner .register a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  .carousel .carouselbanner .register a h3 {
+    font-weight: lighter;
   }
   .owl-next {
     position: absolute;
@@ -624,7 +829,7 @@ div[class^="col-"] {
 
 .container {
   text-align: center;
-  padding: 50px 0;
+  padding: 15px 0;
   background-color: white;
 }
 
@@ -646,9 +851,25 @@ div[class^="col-"] {
   padding: 20px;
 }
 
+.container .col-12 {
+  padding: 10px 0;
+}
+
+.container .col-12 h1 {
+  font-size: 24px;
+}
+
+.container .col-12 h2 {
+  font-size: 20px;
+}
+
+.container .col-12 h3 {
+  font-size: 14px;
+}
+
 .footer {
   width: 100%;
-  height: 300px;
+  height: 250px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -672,7 +893,31 @@ div[class^="col-"] {
   color: orange;
 }
 
+.footer .box .fas {
+  color: #cd201f;
+}
+
+.footer .box .fab {
+  color: #cd201f;
+}
+
+.footer .box .fa-facebook-square {
+  color: blue;
+}
+
+.footer h4 {
+  font-size: 18px;
+}
+
 .footer h5 {
   padding-top: 25px;
+}
+
+.footer h5 a {
+  color: black;
+}
+
+.footer .fa-map-marker-alt {
+  color: blue;
 }
 /*# sourceMappingURL=BuildSchool.css.map */
