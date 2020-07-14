@@ -54,9 +54,14 @@
   z-index: 1;
 }
 
-.midbanner .content h1,
+.midbanner .content h1 {
+  font-weight: lighter;
+  font-size: 26px;
+}
+
 .midbanner .content h2 {
   font-weight: lighter;
+  font-size: 18px;
 }
 
 .midbanner .midbanner-mask::after {
@@ -138,7 +143,7 @@
   .fbmessagecircle {
     position: fixed;
     width: 100%;
-    bottom: 3.7%;
+    bottom: 3.88%;
     z-index: 50;
   }
   .fbmessagecircle .message {
@@ -229,7 +234,7 @@
     color: #cd201f;
   }
   .circlefilter .filterinfos i:last-child {
-    color: blue;
+    color: #1E90FF;
   }
   .mainheader {
     position: -webkit-sticky;
@@ -365,6 +370,38 @@
     width: 100%;
     min-width: 320px;
   }
+  .carouselbanner {
+    width: 100%;
+    height: 55px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    text-align: center;
+    margin-top: -10px;
+    padding: 5px 0;
+  }
+  .carouselbanner .register {
+    margin: 0 10px;
+  }
+  .carouselbanner .register a {
+    text-decoration: none;
+    color: black;
+  }
+  .carouselbanner .register a h3 {
+    font-size: 15px;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  .carouselbanner .register a h3:hover {
+    color: #1E90FF;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
   .owl-next {
     position: absolute;
     top: 40%;
@@ -389,6 +426,9 @@
     left: 0;
     right: 0;
   }
+  .footer h4 {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -401,7 +441,7 @@
   .fbmessage {
     position: fixed;
     bottom: 3.8%;
-    right: 3.05%;
+    right: 3.1%;
     z-index: 5;
     font-size: 45px;
   }
@@ -611,7 +651,7 @@
   }
   .carousel .carouselbanner .register a {
     text-decoration: none;
-    color: white;
+    color: black;
     display: block;
     width: 100%;
     height: 100%;
@@ -628,6 +668,13 @@
   }
   .carousel .carouselbanner .register a h3 {
     font-weight: lighter;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+  }
+  .carousel .carouselbanner .register a h3:hover {
+    color: white;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
   }
   .owl-next {
     position: absolute;
@@ -849,10 +896,6 @@ div[class^="col-"] {
 
 .container img {
   padding: 20px;
-}
-
-.container .col-12 {
-  padding: 10px 0;
 }
 
 .container .col-12 h1 {
