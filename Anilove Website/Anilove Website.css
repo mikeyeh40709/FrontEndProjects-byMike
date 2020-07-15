@@ -374,7 +374,6 @@ body{
 .news{
     width: 100%;
     height: 1200px;
-    /* background-color: #FDFDFD;    */
     background-color: #FDFDFD;
     display: flex;
     flex-wrap: wrap;
@@ -382,17 +381,17 @@ body{
     justify-content: center;
     position: relative;
 }
-.news .newstext h1{
+.news .newstextandvideo h1{
     color: #535353;
     font-size: 50px;
-    padding: 50px 0 10px;
-    display: flex;
+    padding: 25px 0;
+    /* display: flex; */
 }
-.news .newstext h2{
+.news .newstextandvideo h2{
     color: #7ABEE9;
     font-size: 30px;
-    padding: 5px 0 0px;
-    display: flex;
+    margin-bottom: 20px;
+    /* display: flex; */
 }
 .news .newspics .newshostleft img{
     border-radius: 50%;
@@ -402,14 +401,14 @@ body{
 }
 .news .newspics .newshostleft{
     position: absolute;
-    bottom: 170px;
-    left: 300px;
+    bottom: 100px;
+    left: 480px;
     color: white;
 }
 .news .newspics .newshostright{
     position: absolute;
-    bottom: 170px;
-    right: 250px;
+    bottom: 100px;
+    right: 430px;
     color: white;
 }
 .news .newspics h4{
@@ -483,10 +482,9 @@ body{
 .fourpets .pics img{
     width: 100%;
 }
-
 .fourpets i{
-    width: 345px;
-    height: 294px;
+    width: 475px;
+    height: 405px;
     background-color: orange;
     opacity: 0;
     display: flex;
@@ -498,8 +496,9 @@ body{
 
 .fourpets .pics .fab{
     position: absolute;
-    bottom: 1px;
+    bottom: -110px;
 }
+
 .fourpets .pics .fab:hover{
     font-size: 50px;
     transition: linear 0.25s;
@@ -509,7 +508,7 @@ body{
 }
 .footer{
     width: 100%;
-    height: 450px;
+    height: 400px;
     background-image: url('./asset\ 19.jpeg');
     background-position: center;
     display: flex;
@@ -517,6 +516,7 @@ body{
     justify-content: center;
     text-align: center;
     color: white;
+    margin-top: 100px;
 }
 .footer .logo{
     display: flex;
@@ -526,10 +526,10 @@ body{
 .footer .logo h1{
     font-weight: 550;
     font-size: 50px;
-    padding: 10px;
+    /* padding: 10px; */
 }
 .footer .footerlink{
-    padding: 50px 10px 0 0;
+    padding: 20px 5px 0 0;
     font-size: 48px;
 }
 .footer .footerlink a:nth-child(1){
@@ -551,5 +551,5 @@ body{
     color: #ff9933;
 }
 .footer .contact h4{
-    padding: 20px 0 0 0;
+    padding: 10px 0 0 0;
 }
