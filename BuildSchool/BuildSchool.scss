@@ -86,6 +86,7 @@
                         span {
 
                             background-color: black;
+                            transition: 0.25s;
 
                             &:nth-child(1) {
                                 transform: rotate(45deg);
@@ -116,8 +117,8 @@
                 .circledots {
                     span {
                         &:nth-child(3) {
-                            transform: rotate(225deg);
-                            width: 25px;
+                            transform: rotate(135deg);
+                            width:30px;
                             height: 5px;
                             border-radius: 0;
                             transition: 0.25s;
@@ -129,8 +130,8 @@
                         }
 
                         &:nth-child(1) {
-                            transform: rotate(-225deg);
-                            width: 25px;
+                            transform: rotate(-135deg);
+                            width:30px;
                             height: 5px;
                             border-radius: 0;
                             transition: 0.25s;
@@ -950,23 +951,22 @@ div[class^="col-"] {
         text-align: center;
     }
 
-    img {
-        padding: 20px;
-    }
+    
 
     .col-12 {
-        h1 {
-            font-size: 24px;
-        }
+        
 
         h2 {
             font-size: 20px;
         }
 
-        h3 {
-            font-size: 14px;
+        .text{
+            margin-top: 10px;
+            text-align: left;
         }
-
+        img{
+            padding: 5px 0;
+        }
     }
 
 }

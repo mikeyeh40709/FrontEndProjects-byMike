@@ -83,6 +83,8 @@
   }
   #menu-control:checked ~ .mainheader .logo-group .hb span {
     background-color: black;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
   }
   #menu-control:checked ~ .mainheader .logo-group .hb span:nth-child(1) {
     -webkit-transform: rotate(45deg);
@@ -100,9 +102,9 @@
     transition: 0.25s cubic-bezier(0.29, 1.17, 0.56, 1.43);
   }
   #circledots:checked ~ .fbmessagecircle .circledots span:nth-child(3) {
-    -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
-    width: 25px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+    width: 30px;
     height: 5px;
     border-radius: 0;
     -webkit-transition: 0.25s;
@@ -114,9 +116,9 @@
     transition: 0.25s;
   }
   #circledots:checked ~ .fbmessagecircle .circledots span:nth-child(1) {
-    -webkit-transform: rotate(-225deg);
-            transform: rotate(-225deg);
-    width: 25px;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+    width: 30px;
     height: 5px;
     border-radius: 0;
     -webkit-transition: 0.25s;
@@ -894,20 +896,17 @@ div[class^="col-"] {
   text-align: center;
 }
 
-.container img {
-  padding: 20px;
-}
-
-.container .col-12 h1 {
-  font-size: 24px;
-}
-
 .container .col-12 h2 {
   font-size: 20px;
 }
 
-.container .col-12 h3 {
-  font-size: 14px;
+.container .col-12 .text {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.container .col-12 img {
+  padding: 5px 0;
 }
 
 .footer {
