@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar .navbar-brand {
+    display: none;
+  }
+}
+
+.dropdown-menu a:hover {
+  visibility: visible;
+  color: green;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar {
+  font-size: 36px;
+}
+
+.navbar:first-child {
+  font-size: 14px;
+  padding: 1px;
+}
+/*# sourceMappingURL=Shopee.css.map */
