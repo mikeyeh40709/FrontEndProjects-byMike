@@ -11,6 +11,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cd487e856f.js" crossorigin="anonymous"></script>
+    <script src="/IPhone/iPhone.js"></script>
     <title>IPhone</title>
     <style>
         * {
@@ -71,10 +72,10 @@
             <a class="navbar-brand mx-auto" href="#" style="font-size: 10px;cursor:default;">購買 iPhone 可享免額外付費運送服務。</a>
         </div>
     </nav>
-    <div class="container mt-3">
+    <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
-                <img src="/IPhone/IPhonePics/iphone11-select-2019-family.jpg" class="w-100" alt="IPhone">
+                <img src="/IPhone/IPhonePics/iphone11-select-2019-family.jpg" class="w-100" alt="IPhone" id="phonepic">
                 <div class="row text-center mt-3">
                     <div class="col-6">
                         <i class="fas fa-box-open"></i>
@@ -103,28 +104,28 @@
                 </div>
                 <div class="row">
                     <div class="col-6 col-lg-4 p-2">
-                        <button class="p-5 w-100 border-black bg-white rounded"><i
+                        <button class="p-5 w-100 border-black bg-white rounded" onclick="CallRedPic()"><i
                                 class="fas fa-circle text-danger"></i><br>Red</button>
                     </div>
                     <div class="col-6 col-lg-4 p-2">
-                        <button class="p-5 w-100 border-black bg-white rounded"><i
+                        <button class="p-5 w-100 border-black bg-white rounded" onclick="CallYellowPic()"><i
                                 class="fas fa-circle text-warning"></i><br>Yellow</button>
                     </div>
                     <div class="col-6 col-lg-4 p-2">
-                        <button class="p-5 w-100 border-black bg-white rounded"><i
+                        <button class="p-5 w-100 border-black bg-white rounded" onclick="CallBlackPic()"><i
                                 class="fas fa-circle"></i><br>Black</button>
                     </div>
                     <div class="col-6 col-lg-4 p-2">
-                        <button class="p-5 w-100 border-black bg-white rounded"><i class="fas fa-circle"
-                                style="color: #DDA0DD;"></i><br>Purple</button>
+                        <button class="p-5 w-100 border-black bg-white rounded" onclick="CallPurplePic()"><i
+                                class="fas fa-circle" style="color: #DDA0DD;"></i><br>Purple</button>
                     </div>
                     <div class="col-6 col-lg-4 p-2">
-                        <button class="p-5 w-100 border-black bg-white rounded"><i class="fas fa-circle"
-                                style="color: #3CB371;"></i><br>Green</button>
+                        <button class="p-5 w-100 border-black bg-white rounded" onclick="CallGreenPic()"><i
+                                class="fas fa-circle" style="color: #3CB371;"></i><br>Green</button>
                     </div>
                     <div class="col-6 col-lg-4 p-2">
-                        <button class="p-5 w-100 border-black bg-white rounded"><i class="fas fa-circle"
-                                style="color: #ccc;"></i><br>White</button>
+                        <button class="p-5 w-100 border-black bg-white rounded" onclick="CallWhitePic()"><i
+                                class="fas fa-circle" style="color: #ccc;"></i><br>White</button>
                     </div>
                     <div class="col-12 d-flex justify-content-center align-items-center p-2 text-center">
                         <img src="/IPhone/IPhonePics/iphone-8-red-logo-201809.png" alt="redlogo">
@@ -139,15 +140,16 @@
                 </div>
                 <div class="row">
                     <div class="col-6 col-md-4 col-lg-4 p-2">
-                        <button class="p-5 w-100 border-black bg-white rounded text-center">64GB<br>NT$24900
+                        <button class="p-5 w-100 border-black bg-white rounded text-center" onclick="sixfourGBprice()"
+                            disabled='false' id="sixfour">64GB
                         </button>
                     </div>
-                    <div class="col-6 col-md-4 col-lg-4 p-2">
-                        <button class="p-5 w-100 border-black bg-white rounded text-center">128G<br>NT$2690
+                    <div class="col-6 col-md-4 col-lg-4 p-2" onclick="onetwoeightGBprice()">
+                        <button class="p-5 w-100 border-black bg-white rounded text-center" disabled='false' id="onetwoeight">128G
                         </button>
                     </div>
-                    <div class="col-6 col-md-4 col-lg-4 p-2">
-                        <button class="p-5 w-100 border-black bg-white rounded text-center">256G<br>NT$30400
+                    <div class="col-6 col-md-4 col-lg-4 p-2" onclick="twofivesixGBprice()">
+                        <button class="p-5 w-100 border-black bg-white rounded text-center" disabled='false' id="twofivesix">256G
                         </button>
                     </div>
                 </div>
@@ -155,8 +157,8 @@
                     <div class="col-6 col-lg-4 p-2 mt-3">
                         <h3>Price Trial</h3>
                     </div>
-                    <div class="col-12 text-center">
-                        <h3>公道價 $81000</h3>
+                    <div class="col-12 text-center h1" id="price">
+
                     </div>
                 </div>
             </div>
@@ -174,6 +176,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
+    <img src="" alt="">
 </body>
 
 </html>

@@ -27,4 +27,8 @@
   font-size: 14px;
   padding: 1px;
 }
+
+.carousel-inner {
+  height: 50vh;
+}
 /*# sourceMappingURL=Shopee.css.map */
