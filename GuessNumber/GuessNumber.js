@@ -46,6 +46,7 @@ function Reset() {
     document.getElementById('start').disabled = false;
     document.getElementById('checkanswer').disabled = true;
     document.getElementById('Hide').disabled = true;
+    document.getElementById('CompareBox').disabled = true;
     // document.getElementById('CompareBox').disabled = false;
 }
 
@@ -66,7 +67,7 @@ function Compare() {
             if (numbertoguessArray[i] == inputintArray[j]) {
                 if (i == j) {
                     countA++;
-                } else if (i != j) {
+                } else {
                     countB++;
                 }
             }
