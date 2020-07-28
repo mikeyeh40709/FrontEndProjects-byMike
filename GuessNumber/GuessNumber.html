@@ -52,6 +52,7 @@
                 <input type="text" class="form-control" placeholder="Please enter a four non-duplicate digit number!"
                     aria-label="Example text with button addon" aria-describedby="button-addon1" id="InputBox" value=""
                     oninput="value=value.replace(/[^\d]/g,'')">
+                    <!-- /^[0-9]{4}&/ -->
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary rounded-right bg-primary text-light" type="button"
                         onclick="Compare()" id="CompareBox" disabled="true">Guess Number!</button>
