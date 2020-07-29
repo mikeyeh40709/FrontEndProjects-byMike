@@ -1,5 +1,13 @@
 function insertNum(element) {
-    document.getElementById('value').value += element.id;
+    //在尾數是零,前一個字是運算值的狀況下,輸入數字後要除掉尾數並加入該數字,再讓checkZero=true;
+    if (document.getElementById('value').value[document.getElementById('value').value.length - 1] == '0' && ['+', '-', '*', '/'].includes(document.getElementById('value').value[document.getElementById('value').value.length - 2])) {
+        var changeNum = Array.from(document.getElementById('value').value);
+        changeNum.pop();
+        changeNum.push(`${element.id}`);
+        document.getElementById('value').value = changeNum.join('');
+    } else {
+        document.getElementById('value').value += element.id;
+    }
     checkZero = true;
 }
 
@@ -25,25 +33,25 @@ function clearAll() {
 }
 //按下運算值或dot或數字設為true
 var checkZero = false;
+
 function insertZero() {
     if (document.getElementById('value').value != "" && checkZero == true) {
         document.getElementById('value').value += '0';
+    } else if (['+', '-', '*', '/'].includes(document.getElementById('value').value[document.getElementById('value').value.length - 1])) {
+        var changeZero = Array.from(document.getElementById('value').value);
+        changeZero.push('0');
+        document.getElementById('value').value = changeZero.join('');
+        checkZero = false;
     }
-}
 
-// 3.開根號 / 次方
-// 5. .1+.3 OK
-// 6. 200 + 0002.3 error
-// 當空的不能+*/
+}
 
 function AddCounter(element) {
     if (['+', '-', '*', '/', '.'].includes(document.getElementById('value').value[document.getElementById('value').value.length - 1])) {
-        let changeCounter = Array.from(document.getElementById('value').value);
+        var changeCounter = Array.from(document.getElementById('value').value);
         changeCounter.pop();
         changeCounter.push(`${element.id}`);
         document.getElementById('value').value = changeCounter.join('');
-        
-        // return;
     } else if (element.id === '-' && document.getElementById('value').value == "") {
         document.getElementById('value').value += `${element.id}`;
     } else if (document.getElementById('value').value != "") {
