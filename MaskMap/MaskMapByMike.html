@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <script src="/MaskMap/MaskMap.js"></script>
+    <title>MaskMapbytestMike</title>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <template id='cardPizza'>
+        <div class="card" style="width: 18rem;">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
+                <button href="#" class="btn btn-success">詳細內容</a>
+            </div>
+        </div>
+    </template> -->
+    <div id="map"></div>
+    <div class="pos-f-t" style="width: 25%; position: absolute; top: 0;">
+        <nav class="navbar navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <template id='position'>
+                <button class="w-100 p-3 bg-dark border-0  text-light">Keelung</button>
+            </template>
+            
+            <!-- <button class="w-100 p-3 bg-dark border-0  text-light">Yilan</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Taipei</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">New Taipei</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Hsinchu</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Miaoli</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Taichung</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Changhua</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Nantou</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Yunlin</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Chiayi </button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Tainan</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Kaohsiung</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Pingtungn</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Taitung</button>
+            <button class="w-100 p-3 bg-dark border-0  text-light">Hualien</button> -->
+        </div>
+    </div>
+
+    
+    <script type="module">
+        import {$g} from "../NapoliPizza/helpers.js"
+        // let 
+    </script>
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgPB-WAYV3LB6PAZ9PdEwJ-wK7bi672jk&callback=initMap">
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
