@@ -31,14 +31,36 @@
         * {
             font-family: 'Noto Sans TC', sans-serif;
         }
+
+        #accordion button {
+            color: white;
+        }
+
+        .card-header {
+            background-color: slategray;
+            text-align: center;
+        }
+
+        .card-body button {
+            background-color: slategray;
+            margin: auto;
+        }
+
+        .panel-title a {
+            display: block;
+            padding: 10px 15px;
+            margin: -10px -15px;
+            cursor: pointer;
+            padding: 18px;
+        }
     </style>
 </head>
 
 <body>
     <div id="map"></div>
 
-    <div class="pos-f-t" style="width: 20%; position: absolute; top: 0; left: 0;">
-        <nav class="navbar navbar-dark bg-secondary border rounded">
+    <div class="pos-f-t" style="width: 25%; position: absolute; top: 0; left: 0;">
+        <nav class="navbar navbar-dark bg-secondary border">
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -47,11 +69,11 @@
             <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <h5 class="mt-2">Dark mode：</h5>
-                    <label class="btn btn-secondary active border rounded">
+                    <label class="btn btn-secondary active border">
                         <input type="radio" name="options" id="option1" autocomplete="off" checked
                             onclick="EnableDarkMode()">Enable
                     </label>
-                    <label class="btn btn-secondary border rounded">
+                    <label class="btn btn-secondary border">
                         <input type="radio" name="options" id="option3" autocomplete="off"
                             onclick="DisableDarkMode()">Disable
                     </label>
@@ -62,92 +84,82 @@
             <div id="accordion">
                 <div class="card">
                     <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                aria-expanded="false" aria-controls="collapseOne">
-                                North Area
-                            </button>
+                        <h5 class="panel-title mb-0">
+                            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne"
+                                aria-expanded="false">北部地區</a>
                         </h5>
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                         <div class="card-body">
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Keelung</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Yilan</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Taipei</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">New Taipei</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Taoyuan</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Hsinchu</button>
+                            <button class="w-100 p-3 bg-secondary text-light">Keelung</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Yilan</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Taipei</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">New Taipei</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Taoyuan</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Hsinchu</button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                                aria-expanded="false" aria-controls="collapseTwo">
-                                Mid Area
-                            </button>
+                        <h5 class="panel-title mb-0">
+                            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo"
+                                aria-expanded="false">中部地區</a>
                         </h5>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                         <div class="card-body">
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Miaoli</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Taichung</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Changhua</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Nantou</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Yunlin</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Miaoli</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Taichung</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Changhua</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Nantou</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Yunlin</button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
-                                aria-expanded="false" aria-controls="collapseThree">
-                                South Area
-                            </button>
+                        <h5 class="panel-title mb-0">
+                            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree"
+                                aria-expanded="false">南部地區</a>
                         </h5>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                         <div class="card-body">
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Chiayi </button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Tainan</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Kaohsiung</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Pingtungn</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Chiayi </button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Tainan</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Kaohsiung</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Pingtungn</button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingFour">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
-                                aria-expanded="false" aria-controls="collapseFour">
-                                East Area
-                            </button>
+                        <h5 class="panel-title mb-0">
+                            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour"
+                                aria-expanded="false">東部地區</a>
                         </h5>
                     </div>
                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                         <div class="card-body">
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Taitung</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Hualien</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Penghu</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Taitung</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Hualien</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Penghu</button>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingFive">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"
-                                aria-expanded="false" aria-controls="collapseFive">
-                                Outlying Islands
-                            </button>
+                        <h5 class="panel-title mb-0">
+                            <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseFive"
+                                aria-expanded="false">離島地區</a>
                         </h5>
                     </div>
                     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                         <div class="card-body">
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Kinmen</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Lianjiang</button>
-                            <button class="w-100 p-2 bg-secondary border-0  text-light">Mazu</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Kinmen</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Lianjiang</button>
+                            <button class="w-100 p-3 bg-secondary border  text-light">Mazu</button>
                         </div>
                     </div>
                 </div>

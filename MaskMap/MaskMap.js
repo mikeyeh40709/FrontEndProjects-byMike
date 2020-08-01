@@ -252,11 +252,11 @@ function getUserLocation(map) {
         }
 
         function showError() {
-            console.log('無法取得你的地理位置。')
+            console.log('Unable to get your location')
         }
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
-        console.log('你的裝置不支援定位功能。');
+        console.log("Your device does not support location function");
     }
 }
 var xhr = new XMLHttpRequest();
