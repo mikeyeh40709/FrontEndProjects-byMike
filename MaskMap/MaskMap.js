@@ -11,6 +11,9 @@ function initMap() {
             mapTypeControl: true,
             mapTypeControlOptions: {
                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.TOP_CENTER,
+            },
+            fullscreenControlOptions: {
                 position: google.maps.ControlPosition.TOP_CENTER
             },
             styles: [{
@@ -59,36 +62,7 @@ function initMap() {
     });
     getUserLocation(map);
     getCityData();
-    // map.data.setStyle(function (feature) {
-    //     var maskLeft = feature.getProperty('mask_adult');
-    //     if (maskLeft > 0) {
-    //         return {
-    //             icon: 'https://cdn.frankerfacez.com/emoticon/287489/2'
-    //         };
-    //     } else {
-    //         return {
-    //             icon: "https://cdn.frankerfacez.com/emoticon/243754/2"
-    //         };
-    //     }
-    // });
-
-    // infowindow = new google.maps.InfoWindow();
-
-    // map.data.addListener('click', function (event) {
-    //     var title = `藥局:<h4>${event.feature.getProperty('name')}</h4>`;
-    //     var adult = `Adult:<h4>${event.feature.getProperty('mask_adult')}</h4>`;
-    //     var child = `Child:<h4>${event.feature.getProperty('mask_child')}</h4>`;
-    //     var updated = `Last Updated:<h4>${event.feature.getProperty('updated')}</h4>`;
-    //     var address = `Address:<h4>${event.feature.getProperty('address')}</h4>`;
-    //     var phone = `Phone:<h4>${event.feature.getProperty('phone')}</h4>`;
-
-    //     infowindow.setContent(title + adult + child + updated + address + phone);
-    //     infowindow.setPosition(event.latLng);
-    //     infowindow.setOptions({
-    //         pixelOffset: new google.maps.Size(0, -55)
-    //     });
-    //     infowindow.open(map);
-    // });
+    autoComplete();
 }
 
 function EnableDarkMode() {
@@ -279,4 +253,85 @@ function getCityData() {
     };
     xhr.open("GET", url);
     xhr.send();
+}
+
+function autoComplete() {
+    const googleMap = new Vue({
+        el: '#app',
+        data: {
+            map: null,
+            autocomplete: null, // google map Autocomplete method
+            site: '', // place API要綁定的搜尋框
+            place: null // 存place確定後回傳的資料
+        },
+        methods: {
+            // init google map
+            initMap() {
+                let location = {
+                    lat: 25.0412479,
+                    lng: 121.5395956
+                };
+            },
+            // 地址自動完成 + 地圖的中心移到輸入結果的地址上
+            siteAuto() {
+                let options = {
+                    componentRestrictions: {
+                        country: 'tw'
+                    } // 限制在台灣範圍
+                };
+                this.autocomplete = new google.maps.places.Autocomplete(this.$refs.site, options);
+
+                // 地址的輸入框，值有變動時執行
+                this.autocomplete.addListener('place_changed', () => {
+                    this.place = this.autocomplete.getPlace(); // 地點資料存進place
+
+                    // 確認回來的資料有經緯度
+                    if (this.place.geometry) {
+
+                        // 改變map的中心點
+                        let searchCenter = this.place.geometry.location;
+
+                        // panTo是平滑移動、setCenter是直接改變地圖中心
+                        map.panTo(searchCenter);
+
+                        // 在搜尋結果的地點上放置標記
+                        let marker = new google.maps.Marker({
+                            position: searchCenter,
+                            map: map
+                        });
+                        // info window
+                        let infowindow = new google.maps.InfoWindow({
+                            content: this.place.formatted_address
+                        });
+                        infowindow.open(map, marker);
+
+                    }
+
+                });
+            }
+        },
+        mounted() {
+            window.addEventListener('load', () => {
+                this.initMap();
+                this.siteAuto();
+            });
+        }
+    })
+}
+
+function unfoldSearch() {
+    document.querySelector("#app").style.height = "100vh";
+}
+
+function foldSearch() {
+    document.querySelector("#app").style.height = "100px";
+    document.querySelector("#app").style.overflow = "hidden";
+}
+
+function changeHeight() {
+    document.querySelector("#app").style.height = "100vh";
+}
+
+function clearInput() {
+    document.querySelector('#clearInput').value = "";
 }

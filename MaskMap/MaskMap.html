@@ -37,7 +37,7 @@
         }
 
         .card-header {
-            background-color: slategray;
+            background-color: #696969;
             text-align: center;
         }
 
@@ -48,10 +48,15 @@
 
         .panel-title a {
             display: block;
-            padding: 10px 15px;
+            padding: 18px 15px;
             margin: -10px -15px;
             cursor: pointer;
-            padding: 18px;
+            transition: 0.25s;
+        }
+
+        .panel-title a:hover {
+            background-color: #606060;
+            transition: 0.25s;
         }
     </style>
 </head>
@@ -80,17 +85,18 @@
                 </div>
             </div>
         </nav>
+
         <div class="collapse" id="navbarToggleExternalContent">
             <div id="accordion">
                 <div class="card">
                     <div class="card-header" id="headingOne">
-                        <h5 class="panel-title mb-0">
+                        <h5 class="panel-title mb-0 text-light">
                             <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne"
                                 aria-expanded="false">北部地區</a>
                         </h5>
                     </div>
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="card-body p-0 my-auto">
                             <button class="w-100 p-3 bg-secondary text-light">Keelung</button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Yilan</button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Taipei</button>
@@ -102,13 +108,13 @@
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingTwo">
-                        <h5 class="panel-title mb-0">
+                        <h5 class="panel-title mb-0 text-light">
                             <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseTwo"
                                 aria-expanded="false">中部地區</a>
                         </h5>
                     </div>
                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="card-body p-0 my-auto">
                             <button class="w-100 p-3 bg-secondary border  text-light">Miaoli</button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Taichung</button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Changhua</button>
@@ -119,13 +125,13 @@
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingThree">
-                        <h5 class="panel-title mb-0">
+                        <h5 class="panel-title mb-0 text-light">
                             <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseThree"
                                 aria-expanded="false">南部地區</a>
                         </h5>
                     </div>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="card-body p-0 my-auto">
                             <button class="w-100 p-3 bg-secondary border  text-light">Chiayi </button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Tainan</button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Kaohsiung</button>
@@ -135,13 +141,13 @@
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingFour">
-                        <h5 class="panel-title mb-0">
+                        <h5 class="panel-title mb-0 text-light">
                             <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseFour"
                                 aria-expanded="false">東部地區</a>
                         </h5>
                     </div>
                     <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="card-body p-0 my-auto">
                             <button class="w-100 p-3 bg-secondary border  text-light">Taitung</button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Hualien</button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Penghu</button>
@@ -150,13 +156,13 @@
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingFive">
-                        <h5 class="panel-title mb-0">
+                        <h5 class="panel-title mb-0 text-light">
                             <a data-toggle="collapse" data-parent="#accordion" data-target="#collapseFive"
                                 aria-expanded="false">離島地區</a>
                         </h5>
                     </div>
                     <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
-                        <div class="card-body">
+                        <div class="card-body p-0 my-auto">
                             <button class="w-100 p-3 bg-secondary border  text-light">Kinmen</button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Lianjiang</button>
                             <button class="w-100 p-3 bg-secondary border  text-light">Mazu</button>
@@ -164,19 +170,60 @@
                     </div>
                 </div>
             </div>
-
-
-
-
+        </div>
+    </div>
+    <div id="app" class="container position-absolute"
+        style="width: 26%; top: 0; right: 0; background-color:#606060; overflow: auto; opacity: 0.9; transition: 0.25s;">
+        <!-- 搜尋框 -->
+        <div class="row mt-2">
+            <div class="col google-map">
+                <div class="row justify-content-between align-items-center">
+                    <h5 class="text-light ml-3">Search：</h5>
+                    <div class="item mb-1">
+                        <button type="button" class="btn btn-dark" onclick="unfoldSearch()">Unfold</button>
+                        <button type="button" class="btn btn-dark mr-3" onclick="foldSearch()">Fold</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- <input type="text" class="form-control" ref="site" v-model="site" onchange="changeHeight()"> -->
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search..." ref="site" v-model="site" onchange="changeHeight()" id="clearInput">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary text-light" type="button" onclick="clearInput()" >Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 放評論摘要的div -->
+        <div class="row" v-if="place != null" id="comment">
+            <div class="col" v-if="place.reviews != null">
+                <h5 class="text-light">Comment：</h5>
+                <div class="row" v-for="p in place.reviews">
+                    <div class="col">
+                        <ul class="list-unstyled">
+                            <li class="media">
+                                <img :src="p.profile_photo_url" class="mr-3" style="width: 10%;">
+                                <div class="media-body">
+                                    <h6 class="mt-0 mb-1">
+                                        <a target="_blank" :href="p.author_url"
+                                            class="text-light">{{ p.author_name }}</a>
+                                    </h6>
+                                    <p class="text-light">{{ p.text }}</p>
+                                    <h6 style="font-size: 10px;">{{ p.relative_time_description }}</h6>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
-
-
-
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
     <script defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgPB-WAYV3LB6PAZ9PdEwJ-wK7bi672jk&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgPB-WAYV3LB6PAZ9PdEwJ-wK7bi672jk&callback=initMap&libraries=places">
     </script>
 
     <!-- Optional JavaScript -->
