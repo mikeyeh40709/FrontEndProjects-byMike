@@ -1,8 +1,12 @@
 var map;
-var infowindow;
+// var infowindow;
 var markers = [];
+var destinationlatlng;
 
 function initMap() {
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsDisplay.setMap(map);
     map = new google.maps.Map(
         document.getElementById('map'), {
             center: new google.maps.LatLng(25.0412479, 121.5395956),
@@ -42,14 +46,16 @@ function initMap() {
                                         </p>                
                                         <p class="my-1 h6"><i class="fas fa-phone-alt"></i>${feature.getProperty('phone')}</p>
                                         <p class="my-1 h6"><i class="fas fa-calendar-alt"></i>${feature.getProperty('note')}</p>
-                                        <p class="my-1 h6 text-secondary"><span>數據更新時間：</span>${feature.getProperty('updated')}</p>
+                                        <p class="my-1 h6 text-secondary"><span>數據更新時間：</span>${feature.getProperty('updated')}</p><button>${feature.getGeometry().get(0)}</button>
                                     </div>`,
                 // 設定訊息視窗最大寬度
                 maxWidth: 450
             });
             marker.addListener("click", function () {
                 infowindow.open(map, marker);
-            })
+                document.querySelector('#clearInput').value = `${feature.getProperty('name')}`;
+            });
+
         });
         var clusterOptions = {
             imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
@@ -209,11 +215,12 @@ function DisableDarkMode() {
         }]
     });
 }
+var myLatLng;
 
 function getUserLocation(map) {
     if (navigator.geolocation) {
         function showPosition(position) {
-            var myLatLng = {
+            myLatLng = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
@@ -226,20 +233,21 @@ function getUserLocation(map) {
         }
 
         function showError() {
-            console.log('Unable to get your location')
+            alert('Unable to get your location');
         }
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
-        console.log("Your device does not support location function");
+        alert("Your device does not support location function");
     }
 }
 var xhr = new XMLHttpRequest();
 var url = "https://raw.githubusercontent.com/mikeyeh40709/FileStorage/master/TaiwanCity.json";
+var citydata = [];
 
 function getCityData() {
     xhr.onload = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            var citydata = JSON.parse(this.responseText);
+            citydata = JSON.parse(this.responseText);
             document.querySelectorAll('.card-body button').forEach(item => item.addEventListener('click', function () {
                 var matchdata = citydata.find(x => x.name == item.innerText);
                 map.setCenter({
@@ -266,12 +274,12 @@ function autoComplete() {
         },
         methods: {
             // init google map
-            initMap() {
-                let location = {
-                    lat: 25.0412479,
-                    lng: 121.5395956
-                };
-            },
+            // initMap() {
+            //     let location = {
+            //         lat: 25.0412479,
+            //         lng: 121.5395956
+            //     };
+            // },
             // 地址自動完成 + 地圖的中心移到輸入結果的地址上
             siteAuto() {
                 let options = {
@@ -284,27 +292,50 @@ function autoComplete() {
                 // 地址的輸入框，值有變動時執行
                 this.autocomplete.addListener('place_changed', () => {
                     this.place = this.autocomplete.getPlace(); // 地點資料存進place
-
+                    console.log(this.place);
                     // 確認回來的資料有經緯度
                     if (this.place.geometry) {
-
+                        document.querySelector('#clearInput').textContent = this.place.name;
                         // 改變map的中心點
-                        let searchCenter = this.place.geometry.location;
+                        var searchCenter = this.place.geometry.location;
 
                         // panTo是平滑移動、setCenter是直接改變地圖中心
                         map.panTo(searchCenter);
 
+                        var icon = {
+                            url: "https://pbs.twimg.com/profile_images/866586642823426048/V7o0Qf0K_400x400.png", // url
+                            scaledSize: new google.maps.Size(60, 60), // scaled size
+                            origin: new google.maps.Point(0, 0), // origin
+                            anchor: new google.maps.Point(0, 0) // anchor
+                        };
                         // 在搜尋結果的地點上放置標記
-                        let marker = new google.maps.Marker({
+                        var searchmarker = new google.maps.Marker({
                             position: searchCenter,
-                            map: map
+                            map: map,
+                            icon: icon,
                         });
+                        //搜尋後zoom近標記
+                        map.setZoom(16);
+                        //把標記放到array裡
+                        var searchmarkers = [];
+                        searchmarkers.push(searchmarker);
                         // info window
-                        let infowindow = new google.maps.InfoWindow({
-                            content: this.place.formatted_address
-                        });
-                        infowindow.open(map, marker);
-
+                        // var infowindow = new google.maps.InfoWindow({
+                        //     content: this.place.formatted_address
+                        // });
+                        // infowindow.open(map, searchmarker);
+                        //清除所有搜尋後放置的標記
+                        document.querySelectorAll(".input-group-append button").forEach(x => x.addEventListener("click", function () {
+                            searchmarkers.forEach(function (item) {
+                                item.setMap(null);
+                            });
+                            searchmarkers = [];
+                            map.setZoom(12);
+                            document.querySelector("#app").style.height = "96px";
+                            document.querySelector("#app").style.overflow = "hidden";
+                            document.querySelector('#clearInput').value = "";
+                            map.setCenter(myLatLng);
+                        }));
                     }
 
                 });
@@ -312,26 +343,33 @@ function autoComplete() {
         },
         mounted() {
             window.addEventListener('load', () => {
-                this.initMap();
+                // this.initMap();
                 this.siteAuto();
             });
         }
-    })
+    });
 }
 
 function unfoldSearch() {
     document.querySelector("#app").style.height = "100vh";
+    document.querySelector("#app").style.overflow = "auto";
 }
 
 function foldSearch() {
-    document.querySelector("#app").style.height = "100px";
+    document.querySelector("#app").style.height = "96px";
     document.querySelector("#app").style.overflow = "hidden";
+    document.querySelector('#clearInput').value = "";
 }
 
 function changeHeight() {
     document.querySelector("#app").style.height = "100vh";
+    document.querySelector("#app").style.overflow = "auto";
 }
 
 function clearInput() {
-    document.querySelector('#clearInput').value = "";
+    // document.querySelector('#clearInput').value = "";
+    // for (var i = 0; i < markers.length; i++) {
+    //     markers[i].setMap(null);
+    // }
+    // markers = [];
 }

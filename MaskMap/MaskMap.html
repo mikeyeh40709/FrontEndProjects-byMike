@@ -58,6 +58,14 @@
             background-color: #606060;
             transition: 0.25s;
         }
+        .pac-item{
+            background-color: #606060;
+            transition: 0.25s;
+        }
+        .pac-item:hover{
+            background-color: #696969;
+            transition: 0.25s;
+        }
     </style>
 </head>
 
@@ -185,7 +193,6 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <!-- <input type="text" class="form-control" ref="site" v-model="site" onchange="changeHeight()"> -->
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Search..." ref="site" v-model="site" onchange="changeHeight()" id="clearInput">
                         <div class="input-group-append">
