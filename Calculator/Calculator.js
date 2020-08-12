@@ -65,9 +65,8 @@ function CountResult() {
     if (document.getElementById('value').value != '' && ['+', '-', '*', '/'].includes(document.getElementById('value').value[document.getElementById('value').value.length - 1]) == false) {
         document.getElementById('value').value = eval(document.getElementById('value').value);
     } else {
-        alert("Invalid Input!");
+        Swal.fire("Invalid Input!","","error");
     }
-    checkDot = true;
     checkZero = false;
 }
 

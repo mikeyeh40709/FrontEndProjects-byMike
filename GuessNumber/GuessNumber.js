@@ -74,10 +74,12 @@ function Compare() {
         }
     }
     if (input.length != 4) {
-        alert("Please enter a four-digit number!");
+        // alert("Please enter a four-digit number!");
+        Swal.fire("Invalid Input!","Please enter a four-digit non-duplicate number!","warning");
         ClearInputBox();
     } else if (checkForDuplicates(inputintArray)) {
-        alert("Please enter a four non-duplicate digit number!");
+        // alert("Please enter a four non-duplicate digit number!");
+        Swal.fire("Invalid Input!","Please enter a four-digit non-duplicate number!","warning");
         ClearInputBox();
     } else {
         var historygroup = document.getElementById('historygroup');
@@ -96,7 +98,8 @@ function Compare() {
         inputhistory.value = input;
         if (countA == 4) {
             spanresult.classList.add('bg-success');
-            alert('Well done!');
+            // alert('Well done!');
+            Swal.fire("Well done!","You guess the right number!","success");
             document.getElementById('CompareBox').disabled = true;
         } else {
             spanresult.classList.add('bg-danger');

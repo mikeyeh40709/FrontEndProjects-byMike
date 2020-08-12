@@ -233,11 +233,13 @@ function getUserLocation(map) {
         }
 
         function showError() {
-            alert('Unable to get your location');
+            // alert('Unable to get your location');
+            Swal.fire("Oops!","Unable to get your location","warning");
         }
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
-        alert("Your device does not support location function");
+        // alert("Your device does not support location function");
+        Swal.fire("Oops!","Your device does not support location function","warning");
     }
 }
 var xhr = new XMLHttpRequest();
