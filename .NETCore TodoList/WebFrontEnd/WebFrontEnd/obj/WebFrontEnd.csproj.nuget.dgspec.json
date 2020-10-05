@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mikey\\source\\repos\\WebFrontEnd\\WebFrontEnd\\WebFrontEnd.csproj": {}
+    "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\WebFrontEnd\\WebFrontEnd\\WebFrontEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mikey\\source\\repos\\WebFrontEnd\\WebFrontEnd\\WebFrontEnd.csproj": {
+    "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\WebFrontEnd\\WebFrontEnd\\WebFrontEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mikey\\source\\repos\\WebFrontEnd\\WebFrontEnd\\WebFrontEnd.csproj",
+        "projectUniqueName": "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\WebFrontEnd\\WebFrontEnd\\WebFrontEnd.csproj",
         "projectName": "WebFrontEnd",
-        "projectPath": "C:\\Users\\mikey\\source\\repos\\WebFrontEnd\\WebFrontEnd\\WebFrontEnd.csproj",
+        "projectPath": "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\WebFrontEnd\\WebFrontEnd\\WebFrontEnd.csproj",
         "packagesPath": "C:\\Users\\mikey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mikey\\source\\repos\\WebFrontEnd\\WebFrontEnd\\obj\\",
+        "outputPath": "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\WebFrontEnd\\WebFrontEnd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
