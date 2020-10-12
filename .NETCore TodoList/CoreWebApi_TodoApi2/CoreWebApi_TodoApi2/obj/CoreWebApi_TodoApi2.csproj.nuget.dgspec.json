@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mikey\\source\\repos\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2.csproj": {}
+    "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mikey\\source\\repos\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2.csproj": {
+    "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mikey\\source\\repos\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2.csproj",
+        "projectUniqueName": "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2.csproj",
         "projectName": "CoreWebApi_TodoApi2",
-        "projectPath": "C:\\Users\\mikey\\source\\repos\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2.csproj",
+        "projectPath": "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2.csproj",
         "packagesPath": "C:\\Users\\mikey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mikey\\source\\repos\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\obj\\",
+        "outputPath": "C:\\Users\\mikey\\source\\HTML\\Website Decoration\\.NETCore TodoList\\CoreWebApi_TodoApi2\\CoreWebApi_TodoApi2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -71,6 +71,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
             }
           },
           "imports": [

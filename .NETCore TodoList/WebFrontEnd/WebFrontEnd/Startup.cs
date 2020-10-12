@@ -55,8 +55,29 @@ namespace WebFrontEnd
 
             app.UseAuthorization();
 
+            //拆開來會比較浪費資源
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "Phone", //象徵意義
+                    pattern: "iphone",
+                    defaults: new { controller = "Phone", action = "index" }
+                    );
+                endpoints.MapControllerRoute(
+                    name: "Pad",
+                    pattern: "ipad",
+                    defaults: new { controller = "Pad", action = "index" }
+                    );
+                endpoints.MapControllerRoute(
+                    name: "Mac",
+                    pattern: "mac",
+                    defaults: new { controller = "Mac", action = "index" }
+                    );
+                endpoints.MapControllerRoute(
+                    name: "Watch",
+                    pattern: "watch",
+                    defaults: new { controller = "Watch", action = "index" }
+                    );
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

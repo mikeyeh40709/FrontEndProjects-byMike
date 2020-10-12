@@ -38,6 +38,8 @@ namespace CoreWebApi_TodoApi2.Controllers
 
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
         {
             var todoItem = await _context.TodoItems.FindAsync(id);
@@ -86,7 +88,9 @@ namespace CoreWebApi_TodoApi2.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<TodoItem>> PostTodoItem([FromForm]TodoItem todoItem)
+        [Route("~/api/todoitems/json")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        public async Task<ActionResult<TodoItem>> PostTodoItem(/*[FromForm]*/TodoItem todoItem)
         {
             var actionType = Request.Method;
 

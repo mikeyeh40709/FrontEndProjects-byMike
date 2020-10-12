@@ -25,6 +25,7 @@ namespace CoreWebApi_TodoApi2
 
         public IConfiguration Configuration { get; }
 
+        //DI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -35,8 +36,17 @@ namespace CoreWebApi_TodoApi2
                     builder =>
                     {
                         builder.AllowAnyOrigin();
+                        builder.AllowAnyHeader(); // 可吃application/json
+                        builder.AllowAnyMethod();
                     });
+                options.AddPolicy("Policy1", builder =>
+                {
+                    builder.WithOrigins("https://localhost:44328");
+                    //.AllowAnyOrigin 若寫在後面則又會開放全部
+                });
             });
+            services.AddSwaggerGen();
+
             services.AddDbContext<TodoContext>(option => option.UseInMemoryDatabase("TodoListDB"));
 
             services.AddDbContext<TodoItemContext>(options =>
@@ -44,6 +54,7 @@ namespace CoreWebApi_TodoApi2
 
         }
 
+        //MiddleWare
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -56,6 +67,13 @@ namespace CoreWebApi_TodoApi2
 
             app.UseRouting();
             app.UseCors();
+            app.UseCors("Policy1");
+            app.UseSwagger();
+            app.UseSwaggerUI(swag =>
+            {
+                swag.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
