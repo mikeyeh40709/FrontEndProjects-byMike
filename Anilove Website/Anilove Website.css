@@ -402,13 +402,13 @@ body{
 .news .newspics .newshostleft{
     position: absolute;
     bottom: 100px;
-    left: 480px;
+    left: 300px;
     color: white;
 }
 .news .newspics .newshostright{
     position: absolute;
     bottom: 100px;
-    right: 430px;
+    right: 250px;
     color: white;
 }
 .news .newspics h4{
@@ -483,7 +483,7 @@ body{
     width: 100%;
 }
 .fourpets i{
-    width: 475px;
+    width: 380px;
     height: 405px;
     background-color: orange;
     opacity: 0;
